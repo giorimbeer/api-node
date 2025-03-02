@@ -50,7 +50,7 @@ export class ProductController {
     // Si hay error de validación, se retorna un error 400.
     if (productError) {
       console.log(productError);
-      return res.status(400).json({ message: productError.message });
+      return res.status(400).json({ message: productError.issues });
     }
 
     // Se intenta agregar el producto y se maneja el resultado.
@@ -76,7 +76,7 @@ export class ProductController {
 
     // Si la validación falla, se retorna un error 400.
     if (updateError) {
-      return res.status(400).json({ message: updateError.message });
+      return res.status(400).json({ message: updateError.issues });
     }
 
     // Se actualiza el producto y se retorna el resultado.
@@ -101,7 +101,7 @@ export class ProductController {
 
     // Si la validación falla, se retorna un error 400.
     if (updateError) {
-      return res.status(400).json({ message: updateError.message });
+      return res.status(400).json({ message: updateError.issues });
     }
 
     // Se actualiza el producto y se retorna el resultado.
